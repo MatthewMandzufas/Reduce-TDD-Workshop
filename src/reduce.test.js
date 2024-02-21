@@ -64,8 +64,20 @@ describe('Reduce', () => {
             const numberOfItemsInArray = arrayToReduce.length;
             reduce(arrayToReduce, mockReducer);
            
-
             expect(mockReducer).toHaveBeenCalledTimes(numberOfItemsInArray - 1);
+        })
+        describe('and an empty array', ()=>{
+            it('throws an error', ()=> {
+                const array = [];
+                function reducer(accumulator, currentItem){
+                    return accumulator + currentItem;
+                }
+
+                expect(() => reduce(array, reducer)).toThrow("An initial value must be provided when reducing an empty array");
+            
+
+
+            })
         })
     })
 })
