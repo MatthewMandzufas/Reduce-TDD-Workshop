@@ -1,0 +1,9 @@
+{
+ "editor.formatOnSave": true,
+ "[javascript]": {
+    "editor.defualtFormatter": "esbenp.prettier-vscode"
+ },
+ "[javascriptreact]": {
+    "editor.defualtFormatter": "esbenp.prettier-vscode"
+ }
+}
