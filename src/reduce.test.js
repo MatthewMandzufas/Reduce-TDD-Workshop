@@ -75,8 +75,6 @@ describe('Reduce', () => {
 
                 expect(() => reduce(array, reducer)).toThrow("An initial value must be provided when reducing an empty array");
             
-
-
             })
         })
     })
