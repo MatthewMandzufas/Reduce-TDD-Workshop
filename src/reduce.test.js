@@ -39,9 +39,19 @@ describe('Reduce', () => {
             const numberOfItemsInArray = arrayToReduce.length;
             const initialValue = 4;
             
-
             reduce(arrayToReduce, mockReducer, initialValue);
             expect(mockReducer).toHaveBeenCalledTimes(numberOfItemsInArray);
+        })
+    })
+    describe('Given no initial value', ()=>{
+        it('calls the reducer n - 1 times for an array with n elements', ()=>{
+            const mockReducer = jest.fn();
+            const arrayToReduce = [1, 2, 3, 4];
+            const numberOfItemsInArray = arrayToReduce.lengt
+            reduce(arrayToReduce, mockReducer);
+           
+
+            expect(mockReducer).toHaveBeenCalledTimes(numberOfItemsInArray - 1);
         })
     })
 })
