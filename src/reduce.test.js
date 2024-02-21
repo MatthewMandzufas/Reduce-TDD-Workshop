@@ -42,12 +42,26 @@ describe('Reduce', () => {
             reduce(arrayToReduce, mockReducer, initialValue);
             expect(mockReducer).toHaveBeenCalledTimes(numberOfItemsInArray);
         })
+        describe('and an empty array', ()=>{
+            it('returns the initial value', ()=> {
+                const arrayToReduce = [];
+                const initialValue = 4;
+                function reducer(accumulator, currentItem){
+                    return accumulator + currentItem;
+                }
+
+                const reducedValue = reduce(arrayToReduce, reducer, initialValue);
+                expect(reducedValue).toEqual(initialValue);
+
+            })
+        })
     })
+
     describe('Given no initial value', ()=>{
         it('calls the reducer n - 1 times for an array with n elements', ()=>{
             const mockReducer = jest.fn();
             const arrayToReduce = [1, 2, 3, 4];
-            const numberOfItemsInArray = arrayToReduce.lengt
+            const numberOfItemsInArray = arrayToReduce.length;
             reduce(arrayToReduce, mockReducer);
            
 
