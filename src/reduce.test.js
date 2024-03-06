@@ -53,6 +53,18 @@ describe("Reduce", () => {
       reduce(arrayToReduce, mockReducer, initialValue);
       expect(mockReducer).toHaveBeenCalledTimes(numberOfItemsInArray);
     });
+    it("Throws an error if initial value is not a number", () => {
+      const arrayToReduce = [1, 2, 3, 4];
+      const initialValue = "aString!";
+
+      function reducer(accumulator, item) {
+        accumulator = accumulator + item;
+      }
+
+      expect(() => reduce(arrayToReduce, reducer, initialValue)).toThrow(
+        "Initial value must be a number",
+      );
+    });
     describe("and an empty array", () => {
       it("returns the initial value", () => {
         const arrayToReduce = [];
