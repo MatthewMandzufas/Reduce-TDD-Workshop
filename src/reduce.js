@@ -15,7 +15,11 @@ function reduce(arrayToReduce, reducer, initialValue) {
   }
 
   for (let i = startIndex; i < arrayToReduce.length; i++) {
-    accumulator = reducer(accumulator, arrayToReduce[i]);
+    if (typeof arrayToReduce[i] == "number") {
+      accumulator = reducer(accumulator, arrayToReduce[i]);
+    } else {
+      throw new Error("Array contains non-numbers");
+    }
   }
 
   return accumulator;
