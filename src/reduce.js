@@ -9,6 +9,8 @@ function reduce(arrayToReduce, reducer, initialValue) {
     }
     accumulator = arrayToReduce[0];
     startIndex = 1;
+  } else if (typeof initialValue !== "number") {
+    throw new Error("Initial value must be a number");
   } else {
     accumulator = initialValue;
     startIndex = 0;

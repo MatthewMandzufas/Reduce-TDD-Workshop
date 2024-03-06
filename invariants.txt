@@ -1,5 +1,2 @@
-Given no array (different to empty), and an initial value. Returns the initial value. 
-Given no array and no initial value. Throws an error. 
-
-Given no reducer function. Throws an error.
-
+Initial value must be a number
+Should only operate on an array of numbers
